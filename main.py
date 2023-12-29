@@ -2,6 +2,7 @@ import asyncio
 
 from loguru import logger
 
+import config
 from config import accounts
 from sdk.py_near.account import Account
 from sdk.py_near.dapps.core import NEAR
@@ -23,8 +24,8 @@ async def send_transaction(account: dict):
                     args={
                         "p": "nrc-20",
                         "op": "mint",
-                        "tick": "1dragon",
-                        "amt": "100000000"
+                        "tick": config.tick,
+                        "amt": config.amount
                     },
                     nowait=True
                 )
@@ -50,6 +51,6 @@ async def main(accounts: [dict]):
 if __name__ == '__main__':
     add_logger()
     try:
-        asyncio.run(main(accounts))
+        asyncio.run(main(config.accounts))
     except Exception as e:
         logger.exception(e)

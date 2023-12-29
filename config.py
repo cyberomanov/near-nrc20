@@ -7,3 +7,6 @@ accounts = [
         "private_key": 'ed25519:Umi....2Cf'
     },
 ]
+
+tick = '1dragon'
+amount = '100000000'
