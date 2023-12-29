@@ -3,7 +3,6 @@ import asyncio
 from loguru import logger
 
 import config
-from config import accounts
 from sdk.py_near.account import Account
 from sdk.py_near.dapps.core import NEAR
 from utils.add_logger import add_logger
@@ -17,7 +16,7 @@ async def send_transaction(account: dict):
             balance_int = await acc.get_balance()
             balance_float = round(balance_int / NEAR, 4)
 
-            if balance_float > 1:
+            if balance_float > 0.3:
                 tr = await acc.function_call(
                     contract_id="inscription.near",
                     method_name="inscribe",
@@ -29,7 +28,8 @@ async def send_transaction(account: dict):
                     },
                     nowait=True
                 )
-                logger.success(f'{account["account_id"]}: {balance_float} $NEAR, hash: https://nearblocks.io/address/{tr}.')
+                logger.success(
+                    f'{account["account_id"]}: {balance_float} $NEAR, hash: https://nearblocks.io/address/{tr}.')
 
                 new_balance_int = await acc.get_balance()
                 while new_balance_int == balance_int:
