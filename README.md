@@ -14,3 +14,7 @@ python3.10+ is required.
 22:42:10 | SUCCESS | cyberomanov.near: 84.7241 $NEAR, hash: https://nearblocks.io/address/5c7QbTWbk43vgcoedBu4PRePzhEpnPU1FBZDzWhtRBZq.
 22:42:20 | SUCCESS | cyberomanov.near: 84.6371 $NEAR, hash: https://nearblocks.io/address/CoLMzwPjTUiCB6WRjNCZGzAkirzv5Tmj2tXos1ENJVoc.
 ```
+
+## Donations
+
+https://cyberomanov.tech/editor/WTF_donate
