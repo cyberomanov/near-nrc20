@@ -29,7 +29,7 @@ async def send_transaction(account: dict):
                     nowait=True
                 )
                 logger.success(
-                    f'{account["account_id"]}: {balance_float} $NEAR, hash: https://nearblocks.io/address/{tr}.')
+                    f'{account["account_id"]}: {balance_float} $NEAR, hash: https://nearblocks.io/txns/{tr}')
 
                 new_balance_int = await acc.get_balance()
                 while new_balance_int == balance_int:
