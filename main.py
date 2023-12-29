@@ -28,7 +28,7 @@ async def send_transaction(account: dict):
                     },
                     nowait=True
                 )
-                print(f'{account["account_id"]}: {balance_float} $NEAR, hash: https://nearblocks.io/address/{tr}.')
+                logger.success(f'{account["account_id"]}: {balance_float} $NEAR, hash: https://nearblocks.io/address/{tr}.')
 
                 new_balance_int = await acc.get_balance()
                 while new_balance_int == balance_int:
@@ -36,7 +36,7 @@ async def send_transaction(account: dict):
                     await asyncio.sleep(1)
 
             else:
-                print(f'low balance: {balance_float} $NEAR.')
+                logger.warning(f'low balance: {balance_float} $NEAR.')
                 break
         except Exception as e:
             logger.exception(e)
