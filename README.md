@@ -17,4 +17,4 @@ python3.10+ is required.
 
 ## Donations
 
-https://cyberomanov.tech/editor/WTF_donate
+https://cyberomanov.tech/WTF_donate
